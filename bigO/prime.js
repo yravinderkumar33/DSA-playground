@@ -6,6 +6,16 @@ const isPrime = n => {
     return true;
 }
 
+// more optimized way is to iterate till sqrt(n)
+
+const isPrime = n => {
+    if (n <= 1) return false;
+    for (let i = 0; i < Math.floor(Math.sqrt(n)); i++) {
+        if (n % i === 0) return false;
+    }
+    return true;
+}
+
 console.log(isPrime(2));
 console.log(isPrime(1));
 console.log(isPrime(4));

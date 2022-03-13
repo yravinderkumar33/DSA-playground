@@ -105,4 +105,16 @@ const someRecursive = (arr, cb) => {
     return someRecursive(tail, cb);
 }
 
+const isRect = (...sides) => {
+    const frequency = sides.reduce((acc, side) => acc.set(side, (acc.get(side) || 0) + 1), new Map());
+    for (const [key, value] of frequency) {
+        if(![2, 4].includes(value)) return false;
+    }
+    return true;
+}
 // someRecursive([2,2,1], isOdd)
+
+const gcd = (a, b) => {
+    if (a % b === 0) return b;
+    return gcd(b, b % a)
+}
