@@ -1,4 +1,8 @@
 /*
+
+O(n2) = worse case scenario
+O(n) = Best case scenario.
+
 Pseudo Code
 
 Start looping with a variable called i from the end of the array moving towards the beginning.

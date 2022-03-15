@@ -4,6 +4,7 @@
 const binarySearch = (arr, n) => {
     let start = 0, end = arr.length - 1;
     while (start != end) {
+        // in order to avoid overflow we can calculte mid using Math.floor(s + ((e-s)/2))
         const middleIndex = Math.floor(end - start / 2);
         const middleElement = arr[middleIndex]
         if (n > middleElement) { start = middleIndex + 1 }

@@ -3,7 +3,6 @@ Given a string A, A is made up of 0's and 1's. Break A into substrings such that
 
 Find and return maximum number of substrings in which A can be broken.
 
-
 Input Format
 
 The only argument given is string A.
@@ -32,5 +31,14 @@ Explanation 2:
 */
 
 const teams = str => {
-    
+    let counter = 0, freq = { 0: 0, 1: 0 };
+    for (let index = 0; index < str.length; index++) {
+        freq[str[index]]++;
+        if (Object.values(freq).every(value => value && value % 2 === 0)) {
+            counter++;
+        }
+    }
+    return counter;
 }
+
+console.log(teams("00011011"));
